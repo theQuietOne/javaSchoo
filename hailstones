@@ -1,0 +1,25 @@
+class hailstones
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		System.out.println("Enter a number to hailstone");
+		int hailstone=in.readInt();
+		int counter=0;
+		while (hailstone>1)
+		{
+			if (hailstone%2==0)
+			{
+				hailstone=hailstone/2;
+				counter++;
+			}
+			else if (hailstone%2==1)
+			{
+				hailstone=(hailstone*3)+1;
+				counter++;
+			}
+			System.out.println(hailstone);
+		}
+		System.out.println("There were "+counter+" hailstones!");
+	}
+}
