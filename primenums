@@ -1,0 +1,26 @@
+class primenums
+{
+	public static void main(String[]args)
+	{
+		int flag=16;
+		for(int num=1; num<101;num++)
+		{
+			for(int counter=2; counter<num;counter++)
+			{
+				if(num%counter==0)
+				{
+					flag=23;
+					counter=num;
+				}
+			}
+			if (flag==23)
+			{
+				flag=16;
+			}
+			else
+			{
+				System.out.println(num+" is prime!");
+			}
+		}
+	}
+}
