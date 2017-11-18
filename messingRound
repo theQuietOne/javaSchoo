@@ -1,0 +1,42 @@
+class messingRound
+{
+	public static void main(String[]args)
+	{
+		EasyReader in = new EasyReader();
+		int banana, original;
+		original=1;
+		System.out.println("Enter an int, and we'll show you if it's even or odd AND how we do it!");
+		banana=in.readInt();
+		original=banana;
+		System.out.println("-");
+		System.out.println("First, we take the number and divide it by 2.");
+		banana = banana/2;
+		System.out.println("Your number divided by 2=" + banana);
+		System.out.println("-");
+		System.out.println("Then, we multiply it by 2.");
+		banana = banana*2;
+		System.out.println("This step=" + banana);
+		System.out.println("-");
+		System.out.println("Finally, we compare the last printed number to the original number.");
+		System.out.println("-");
+		if (banana==original)
+		{
+			System.out.println("The numbers " + original + " and " + banana + " are equal, so " + original + " is even!");
+		}
+		else
+		{
+			System.out.println("The numbers "+original+" and "+banana+" are not equal, so "+original+" is not even, and is therefore odd!");
+		}
+		System.out.println("-");
+		System.out.println("Or, we could just use modulus and get this done in one step.  If I perform the operation "+original+" mod 2, I'll either get 0 or 1.  If I get 0, it's even, and if I get 1, it's odd!");
+		System.out.println("-");
+		if (original%2==0)
+		{
+			System.out.println("Since "+original+" mod 2 is 0, it's even!");
+		}
+		else
+		{
+			System.out.println("Since "+original+" mod 2 is 1, it's odd!");
+		}
+	}
+}
