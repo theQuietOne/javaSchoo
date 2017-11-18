@@ -1,0 +1,17 @@
+class timeFinder
+{
+	public static void main(String[]args)
+	{
+		EasyReader in = new EasyReader();
+		int hours, secsInHours, minutes, secsInMinutes, input;
+		System.out.println("Enter an amount of seconds and we'll tell you how long that is in simple terms!");
+		input=in.readInt();
+		hours=input/3600;
+		secsInHours=hours*3600;
+		input=input-secsInHours;
+		minutes=input/60;
+		secsInMinutes=minutes*60;
+		input=input-secsInMinutes;
+		System.out.println("There are "+hours+" hours, "+minutes+" minutes, and "+input+" seconds!");
+	}
+}
