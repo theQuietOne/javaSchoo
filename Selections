@@ -1,0 +1,37 @@
+class Selections
+{
+	public static void main(String[]args)
+	{
+		int d=3;
+		if (d==1)
+			System.out.println("Nah");
+		else if (d==3)
+			System.out.println("yeah");
+		else if (d==5)
+			System.out.println("moo");
+		else if (d==7)
+			System.out.println("srjiojgril");
+		else
+			System.out.println("Garbage!!");
+			//more efficient than a bunch of 'if' statements
+
+
+		System.out.println("-");
+		switch(d)
+		{
+			case 1:
+				System.out.println("Nah");
+				break;
+			case 3:
+			case 5:
+				System.out.println("yeah");
+				System.out.println("moo");
+				break;
+			case 7:
+				System.out.println("srjiojgril");
+				break;
+			default:
+				System.out.println("Garbage!!");
+		}
+	}
+}
