@@ -1,0 +1,16 @@
+class WrapperClasses
+{
+	public static void main(String[]args)
+	{
+		String string="21.73";
+		String stringi="387497";
+		double dub=10;
+		int inti, doop;
+		doop=(int)dub;
+		dub=doop;
+		dub=Double.parseDouble(string);
+		System.out.println(dub+string);
+		inti=Integer.parseInt(stringi);
+		System.out.println(inti+3);
+	}
+}
