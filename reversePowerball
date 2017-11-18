@@ -1,0 +1,71 @@
+import java.util.Random;
+class reversePowerball
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		int[]user=new int[6];
+		System.out.println("Enter the first number:");
+		user[1]=in.readInt();
+		System.out.println("Enter the second number:");
+		user[2]=in.readInt();
+		System.out.println("Enter the third number:");
+		user[3]=in.readInt();
+		System.out.println("Enter the fourth number:");
+		user[4]=in.readInt();
+		System.out.println("Enter the fifth number:");
+		user[5]=in.readInt();
+		int good=0;
+		for(int meh=1; meh<6; meh++)
+		for(int potato=1; potato<6; potato++)
+		{
+			if (meh!=potato)
+			if(user[potato]==user[meh])
+			{
+				good=1;
+				System.out.println("Try again!");
+				potato=6;
+				meh=6;
+			}
+		}
+
+		Random randomnum=new Random();
+		int[] array=new int [16];
+		int tickets=1;
+		while (good==0)
+		{
+			for (int neh=1; neh<6; neh++)
+				array[neh]=0;
+				int flag=1;
+			while(flag<6)
+			{
+				int dood=randomnum.nextInt(15);
+				dood=dood+1;
+				for(int potato=1; potato<6; potato++)
+				{
+					if(array[potato]==dood)
+						potato=6;
+					else if(array[potato]<1)
+					{
+					array[potato]=dood;
+					potato=6;
+					flag++;
+					}
+				}
+			}
+			for(int ugh=1; ugh<6; ugh++)
+			{
+				if (array[ugh]!=user[ugh])
+				{
+					ugh=6;
+					tickets++;
+				}
+				else if(ugh==5)
+				{
+					System.out.println("You would have to buy "+tickets+" tickets to win");
+					good=1;
+				}
+			}
+		}
+	}
+}
