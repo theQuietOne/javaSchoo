@@ -1,0 +1,25 @@
+class ReadAFile
+{
+	public static void main(String[]args)
+	{
+		String file;
+		EasyReader in=new EasyReader("sample.txt");
+		EasyWriter out=new EasyWriter("sample.txt");
+
+		out.println("in");
+		out.println("the");
+		out.println("file");
+		out.print("on ");
+		out.print("one ");
+		out.print("line ");
+		out.close();
+
+
+		file=in.readLine();
+		while(!in.eof())
+		{
+			System.out.println(file);
+			file=in.readLine();
+		}
+	}
+}
