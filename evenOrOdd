@@ -1,0 +1,21 @@
+class evenOrOdd
+{
+	public static void main(String[]args)
+	{
+		EasyReader in = new EasyReader();
+		int input, midstep, checker;
+		System.out.println("Enter a number and find out if it's even or odd!");
+		input=in.readInt();
+		midstep = input/2;
+		checker = midstep*2;
+		if (input==checker)
+		{
+			System.out.println("Your number is even!");
+		}
+		else
+		{
+			System.out.println("Your number is odd!");
+
+		}
+	}
+}
