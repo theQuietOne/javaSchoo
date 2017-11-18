@@ -1,0 +1,39 @@
+import java.util.Random;
+class numRangerGOOD
+{
+	public static void main(String[]args)
+	{
+		Random random=new Random();
+		EasyReader in=new EasyReader();
+		System.out.println("Enter lower limit");
+		int lower=in.readInt();
+		System.out.println("Enter upper limit");
+		int upper=in.readInt();
+		upper++;
+		int flag=lower;
+		int [] array=new int [upper+1];
+		if (upper<lower)
+		{
+			System.out.println("Try again!");
+
+		}
+		while (flag<upper+1)
+		{
+			array[flag]=flag;
+			flag++;
+		}
+		int flug=lower;
+		System.out.println("-");
+		while (flug<upper)
+		{
+			int dood=random.nextInt(upper);
+			dood=dood++;
+			if (array[dood]>0)
+			{
+				System.out.println(array[dood]);
+				array[dood]=0;
+				flug++;
+			}
+		}
+	}
+}
