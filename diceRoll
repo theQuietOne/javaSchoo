@@ -1,0 +1,32 @@
+import java.util.Random;
+class diceRoll
+{
+	public static void main(String[]args)
+	{
+		int dice, rolls, dood, result;
+		int[] arrays;
+		Random randomnum=new Random();
+		EasyReader in=new EasyReader();
+		System.out.println("Enter a number of dice");
+		dice=in.readInt();
+		System.out.println("Enter how many times you want to roll the dice");
+		rolls=in.readInt();
+		System.out.println("-");
+		arrays=new int[dice*6+1];
+		for (int dracula=0; dracula<rolls; dracula++)
+		{
+			result=0;
+			for (int counter=0; counter<dice; counter++)
+			{
+				dood=randomnum.nextInt(6);
+				result=result+1+dood;
+			}
+			arrays[result]=arrays[result]+1;
+		}
+		for (int counter=0; counter<dice*6+1; counter++)
+		{
+			if (arrays[counter]>0)
+			System.out.println(counter+" was rolled "+arrays[counter]+" times");
+		}
+	}
+}
