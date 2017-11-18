@@ -1,0 +1,35 @@
+class betterPalendrome
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		String userin, forewards, backwards, letter, newforewards;
+		letter="abcdefghijklmnopqrstuvwxyz";
+		newforewards="";
+		backwards="";
+		System.out.println("Enter a sentence and I'll tell you if it's a palendrome!");
+		userin=in.readLine();
+		forewards=userin.toLowerCase();
+		for (int counter=0; counter<forewards.length(); counter++)
+		{
+			String x=forewards.substring(counter,counter+1);
+			for (int nah=0; nah<letter.length(); nah++)
+			{
+				String y=letter.substring(nah, nah+1);
+				if (x.equals(y))
+				{
+					newforewards=newforewards+y;
+				}
+			}
+		}
+		for (int counter=newforewards.length(); counter>0; counter--)
+		{
+			String x=newforewards.substring(counter-1, counter);
+			backwards=backwards+x;
+		}
+		if (backwards.equals(newforewards))
+		System.out.println(userin+" is a palendrome!");
+		else
+		System.out.println(userin+" is not a palendrome!");
+	}
+}
