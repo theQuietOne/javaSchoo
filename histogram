@@ -1,0 +1,27 @@
+import java.util.Random;
+class histogram
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		int numOfNums, result;
+		int[] array=new int [25];
+		Random random=new Random();
+		System.out.println("How many numbers do you want to generate?");
+		numOfNums=in.readInt();
+		for (int counter=0; counter<numOfNums; counter++)
+		{
+			result=random.nextInt(25);
+			array[result]=array[result]+1;
+		}
+		for (int counter=0; counter<25; counter++)
+		{
+			System.out.print(counter+1+"("+array[counter]+")");
+			for(int dre=0; dre<array[counter]; dre++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
