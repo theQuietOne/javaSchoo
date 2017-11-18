@@ -1,0 +1,33 @@
+import java.util.Random;
+class guessingGame
+{
+	public static void main(String[]args)
+	{
+		EasyReader in =new EasyReader();
+		System.out.println("Guess a number from 0 to a number you choose!  What do you want the highest number to be?");
+		int range=in.readInt();
+		System.out.println("How many guesses do you want?");
+		int guesses=in.readInt();
+		Random meh = new Random();
+		int randomNum=meh.nextInt(range);
+		for (int count=0; count<guesses; count++)
+		{
+			int nium=count+1;
+			System.out.println("This is guess "+nium+" of "+range+"!");
+			int guess=in.readInt();
+			if (guess==randomNum)
+				{
+				System.out.println("You got it!");
+				count=guesses;
+				}
+			else
+			{
+				if (randomNum<guess)
+					System.out.println("Your guess was too high!  Try again!");
+				else
+					System.out.println("Your guess was too low!  Try again!");
+			}
+		}
+		System.out.println("The number was "+randomNum+"!");
+	}
+}
