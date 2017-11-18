@@ -1,0 +1,22 @@
+class TextAdventure
+{
+	public static void main(String[]args)
+	{
+		int y;
+		String phrase = "This is nota game!";
+		String a, b, c;
+		y=phrase.length();
+		System.out.println(y);
+		a=phrase.substring(8, 12);
+		System.out.println(a);
+		b=phrase.substring(1,4);
+		System.out.println(b);
+
+		for(int u=0; u<phrase.length(); u++)
+		System.out.println(phrase.substring(0, u+1));
+		for(int x=18; x>0; x--)
+		System.out.println(phrase.substring(0,x-1));
+		System.out.println(phrase.toUpperCase());
+		System.out.println(phrase.toLowerCase());
+	}
+}
