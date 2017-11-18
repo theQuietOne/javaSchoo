@@ -1,0 +1,94 @@
+import java.util.Random;
+class orderDaNums
+{
+	public static void main(String[]args)
+	{
+		Random tween=new Random();
+		int one=tween.nextInt(15);
+		int two=tween.nextInt(15);
+		int three=tween.nextInt(15);
+		System.out.println(one);
+		System.out.println(two);
+		System.out.println(three);
+		System.out.println("-");
+		if (one<two&&two<three)
+			{
+				System.out.println(one);
+				System.out.println(two);
+				System.out.println(three);
+			}
+		if (one<three&&three<two)
+		{
+			System.out.println(one);
+			System.out.println(three);
+			System.out.println(two);
+		}
+		if (two<three&&three<one)
+		{
+			System.out.println(two);
+			System.out.println(three);
+			System.out.println(one);
+		}
+		if (two<one&&one<three)
+		{
+			System.out.println(two);
+			System.out.println(one);
+			System.out.println(three);
+		}
+		if (three<one&&one<two)
+				{
+					System.out.println(three);
+					System.out.println(one);
+					System.out.println(two);
+				}
+		if (three<two&&two<one)
+			{
+				System.out.println(three);
+				System.out.println(two);
+				System.out.println(one);
+			}
+		if (one==two&&two==three)
+			{
+				System.out.println(one);
+				System.out.println(two);
+				System.out.println(three);
+			}
+		if (one==two&&two<three)
+			{
+				System.out.println(one);
+				System.out.println(two);
+				System.out.println(three);
+			}
+		if (three<two&&two==one)
+			{
+				System.out.println(three);
+				System.out.println(one);
+				System.out.println(two);
+			}
+		if (one==three&&three<two)
+			{
+				System.out.println(one);
+				System.out.println(three);
+				System.out.println(two);
+			}
+		if (two<three&&three==one)
+			{
+				System.out.println(two);
+				System.out.println(three);
+				System.out.println(one);
+			}
+		if (two==three&&three<one)
+			{
+				System.out.println(two);
+				System.out.println(three);
+				System.out.println(one);
+			}
+		if (one<two&&two==three)
+			{
+				System.out.println(one);
+				System.out.println(two);
+				System.out.println(three);
+			}
+
+	}
+}
