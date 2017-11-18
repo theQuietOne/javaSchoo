@@ -1,0 +1,22 @@
+class palenNums
+{
+	public static void main(String[]args)
+	{
+		int flag=0;
+		for(int counter=1;counter<1000001;counter++)
+		{
+			String forewards=Integer.toString(counter);
+			String backwards="";
+			for(int dracula=forewards.length();dracula>0;dracula--)
+			{
+				backwards=backwards+(forewards.substring(dracula-1,dracula));
+			}
+			if (backwards.equals(forewards))
+			{
+				System.out.println(counter);
+				flag++;
+			}
+		}
+		System.out.println("There were "+flag+" palenums between 1 and 1,000,000!  That's a lotta palenums!");
+	}
+}
