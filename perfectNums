@@ -1,0 +1,17 @@
+class perfectNums
+{
+	public static void main(String[]args)
+	{
+		for(int counter=1; counter<10001; counter++)
+		{
+			int compare=0;
+			for(int drac=1; drac<counter; drac++)
+			{
+				if((counter/drac)*drac==counter)
+				compare=compare+drac;
+			}
+			if (compare==counter)
+			System.out.println(counter);
+		}
+	}
+}
