@@ -1,0 +1,19 @@
+class wordCount
+{
+	public static void main(String[]args)
+	{
+		//for strings, say if(x.equals(y)), for ints, doubles, and floats, say if(x==y)
+		EasyReader in = new EasyReader();
+		System.out.println("Enter a sentence and I'll tell you how many words there are!");
+		String sentence = in.readLine();
+		String thingy=" ";
+		int flag=1;
+		for(int counter=0; counter<sentence.length(); counter++)
+		{
+			String x=sentence.substring(counter,counter+1);
+			if(x.equals(thingy))
+				flag++;
+		}
+		System.out.println("There are "+flag+" words in your line!");
+	}
+}
