@@ -1,0 +1,40 @@
+import java.util.Random;
+class euclideanAlgorithm
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		int inputOne, inputTwo, matherOne, matherTwo;
+		int flag=0;
+		System.out.println("Enter the first number");
+		inputOne=in.readInt();
+		System.out.println("Enter the second number");
+		inputTwo=in.readInt();
+		if (inputOne==0||inputTwo==0)
+		{
+			System.out.println("The GCF of "+inputOne+" and "+inputTwo+" is "+(inputOne+inputTwo));
+		}
+		else
+		{
+			matherOne=inputOne;
+			matherTwo=inputTwo;
+			while (flag<1)
+			{
+				if (matherOne==matherTwo)
+				{
+					System.out.println("The GCF of "+inputOne+" and "+inputTwo+" is "+matherOne);
+					flag=1;
+				}
+				if (matherOne<matherTwo)
+				matherTwo=matherTwo-matherOne;
+				if (matherTwo<matherOne)
+				matherOne=matherOne-matherTwo;
+			}
+		}
+	}
+}
+/*Larger num-Smaller num=ans
+compare smaller num to ans
+if smaller num==ans, ans is GCF
+else largernum-smallernum again
+*/
