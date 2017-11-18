@@ -1,0 +1,26 @@
+class payrollCalculator
+{
+	public static void main(String[]args)
+	{
+	EasyReader in = new EasyReader();
+	double hours, wage, pay, overtime;
+	System.out.println("Enter your hours worked and your wage to find your gross paycheck!");
+	System.out.println("-");
+	System.out.println("How many hours did you work?");
+	hours=in.readDouble();
+	System.out.println("How much are you paid per hour?");
+	System.out.print("$");
+	wage=in.readDouble();
+	System.out.println("-");
+		if (hours>40)
+		{
+			overtime=hours-40;
+			pay=(overtime*wage*1.5)+(40*wage);
+		}
+		else
+		{
+			pay=hours*wage;
+	}
+	System.out.println("Your gross pay is $"+pay);
+	}
+}
