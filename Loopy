@@ -1,0 +1,18 @@
+class Loopy
+{
+	public static void main(String[]args)
+	{
+		int whale=0;
+		while(whale<5)
+		{
+			System.out.println("I'm in the loop, so there are less than 5 whales!");
+			System.out.println("+1 to whale!");
+			whale++;
+		}
+		for(int dracula=0; dracula<5; dracula++)
+			for(int counter=0; counter<10; counter++)
+				System.out.println("There are "+counter+" counters and there are "+dracula+ " Draculas!  That's "+counter+" too many counters and "+dracula+" too many Draculas!");
+			System.out.println("Welcome to the bottom!  We're out of cookies, but there are plenty of vampires!");
+
+	}
+}
