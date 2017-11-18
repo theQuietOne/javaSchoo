@@ -1,0 +1,14 @@
+import java.util.Random;
+class Random
+{
+	public static void main(String[]args)
+	{
+		Random randomNum = new Random();
+		int neh;
+		for (int moo=0; moo<10; moo++)
+		{
+			neh=randomNum.nextInt(15);
+			System.out.println(neh);
+		}
+	}
+}
