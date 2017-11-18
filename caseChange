@@ -1,0 +1,47 @@
+class caseChange
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		System.out.println("Enter a sentence and I'll change the cases of each letter!");
+		String sentence=in.readLine();
+		String capital, lowercase, special, space, letter;
+		int flag=3;
+		capital="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		lowercase="abcdefghijklmnopqrstuvwxyz";
+		special="!@#$%^&*()1234567890?.-_;:";
+		space=" ";
+		for(int counter=0; counter<sentence.length(); counter++)
+		{
+			String x=sentence.substring(counter,counter+1);
+			for (int no=0; no<26; no++)
+			{
+				String y=capital.substring(no, no+1);
+				String z=lowercase.substring(no, no+1);
+				String l=special.substring(no, no+1);
+				//if letter is capital
+				if(x.equals(y))
+				{
+					letter=lowercase.substring(no,no+1);
+					System.out.print(letter);
+				}
+				if(x.equals(z))
+				{
+					letter=capital.substring(no,no+1);
+					System.out.print(letter);
+				}
+				if(x.equals(l))
+				{
+					letter=l.substring(no,no+1);
+					System.out.print(letter);
+				}
+				if(x.equals(space))
+				{
+				System.out.print(space);
+				no=26;
+				}
+			}
+		}
+		System.out.println("");
+	}
+}
