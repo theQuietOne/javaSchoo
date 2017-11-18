@@ -1,0 +1,31 @@
+import java.util.Random;
+class Arrayz
+{
+	public static void main(String[]args)
+	{
+		Random r=new Random();
+		int inty;
+		int [] nums=new int[25];
+		for(int y=0; y<25; y++)
+		{
+			inty=r.nextInt(100);
+			nums[y]=inty;
+		}
+		for(int ni=0; ni<25; ni++)
+			System.out.println(nums[ni]);
+		//bubble sort
+		System.out.println("-");
+		for(int e=0;e<24;e++)
+			for(int la=0;la<24;fla++)
+			{
+				if(nums[la]>nums[la+1])
+				{
+					inty=nums[la];
+					nums[la]=nums[la+1];
+					nums[la+1]=inty;
+				}
+			}
+		for(int u=0; u<25; u++)
+			System.out.println(nums[u]);
+	}
+}
