@@ -1,0 +1,29 @@
+import java.util.Random;
+class powerball
+{
+	public static void main(String[]args)
+	{
+		Random randomnum=new Random();
+		int flag=1;
+		int[] array;
+		array=new int [16];
+		while(flag<6)
+		{
+			int dood=randomnum.nextInt(15);
+			dood=dood+1;
+			for(int potato=1; potato<6; potato++)
+			{
+				if(array[potato]==dood)
+				potato=6;
+				else if(array[potato]<1)
+				{
+					array[potato]=dood;
+					potato=6;
+					flag++;
+				}
+			}
+		}
+		for(int counter=1;counter<6;counter++)
+		System.out.println(array[counter]);
+	}
+}
