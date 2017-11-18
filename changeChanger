@@ -1,0 +1,58 @@
+class changeChanger
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		System.out.println("How much did you pay?");
+		System.out.print("$");
+		double paid=in.readDouble();
+		System.out.println("How much did you owe?");
+		System.out.print("$");
+		double owed=in.readDouble();
+		if (paid<owed)
+			System.out.println("Cheapskate!  No change for you!");
+		else
+		{
+			double change=paid-owed;
+			change=change*100;
+			int mather, ten, teninmather, five, fiveinmather, one, oneinmather, quarter, quarterinmather, dime, dimeinmather, nickel, nickelinmather, penny, pennyinmather;
+			mather=(int)change;
+			change=change/100;
+
+			ten=mather/1000;
+			teninmather=ten*1000;
+			mather=mather-teninmather;
+
+			five=mather/500;
+			fiveinmather=five*500;
+			mather=mather-fiveinmather;
+
+			one=mather/100;
+			oneinmather=one*100;
+			mather=mather-oneinmather;
+
+			quarter=mather/25;
+			quarterinmather=quarter*25;
+			mather=mather-quarterinmather;
+
+			dime=mather/10;
+			dimeinmather=dime*10;
+			mather=mather-dimeinmather;
+
+			nickel=mather/5;
+			nickelinmather=nickel*5;
+			mather=mather-nickelinmather;
+
+			penny=mather;
+			System.out.println("There are:");
+			System.out.println(ten+" tens,");
+			System.out.println(five+" fives,");
+			System.out.println(one+" ones,");
+			System.out.println(quarter+" quarters,");
+			System.out.println(dime+" dimes,");
+			System.out.println(nickel+" nickels,");
+			System.out.println(penny+" pennies,");
+			System.out.println("equaling a grand total of $"+change+" in change!");
+		}
+	}
+}
