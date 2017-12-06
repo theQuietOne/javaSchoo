@@ -1,0 +1,12 @@
+class timeSplits
+{
+        public static void main(String[]args)
+          {
+            EasyReader in = new EasyReader();
+            System.out.println(Enter up to 5 numbers in ascending order using the hh:mm:ss format; I'll find the time elapsed between them);
+            String prime = in.readLine;
+            String segundo = in.readLine;
+            System.out.println(If you're done entering numbers, enter 00:00:00);
+            String trece = in.readLine;
+          }
+ }
