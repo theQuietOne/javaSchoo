@@ -3,16 +3,26 @@ class timeSplits
 	public static void main(String[]args)
 	{
 		EasyReader in = new EasyReader();
+		EasyWriter out = new EasyWriter("timeSplits");
+		String prime, segundo, trece, fourer, fiv;
 		System.out.println("Enter up to 5 numbers in ascending order using the hh:mm:ss format; I'll find the time elapsed between them");
-		String prime = in.readLine();
-		String segundo = in.readLine();
+		prime = in.readLine();
+		segundo = in.readLine();
 		System.out.println("If you're done entering numbers, enter 00:00:00");
-		String trece = in.readLine();
+		trece = in.readLine();
 		if (!trece.equals("00:00:00"))
 		{
-			String fourer = in.readLine();
-			String fiv = in.readLine();
+			fourer = in.readLine();
+			if (!fourer.equals("00:00:00"))
+			fiv = in.readLine();
+			else
+			fiv = 00:00:00
 		}
-
+		else
+		{
+			trece = "nah";
+			fourer = "nah";
+			fiv = "nah";
+		}
 	}
 }
