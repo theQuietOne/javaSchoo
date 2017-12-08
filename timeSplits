@@ -2,6 +2,7 @@ class timeSplits
 {
 	public static void main(String[]args)
 	{
+		//enter numbers
 		EasyReader in = new EasyReader();
 		EasyWriter out = new EasyWriter("timeSplits");
 		String prime, segundo, trece, fourer, fiv;
@@ -16,7 +17,7 @@ class timeSplits
 			if (!fourer.equals("00:00:00"))
 			fiv = in.readLine();
 			else
-			fiv = 00:00:00
+			fiv = "nah";
 		}
 		else
 		{
@@ -24,5 +25,16 @@ class timeSplits
 			fourer = "nah";
 			fiv = "nah";
 		}
+		//convert to times
+		int hours, minutes, seconds;
+		int onesec, twosec, threesec, foursec, fivesec;
+		String conversion;
+		conversion = prime.substring(0,2);
+		hours = Integer.parseInt(conversion);
+		conversion = prime.substring(3,5);
+		minutes = Integer.parseInt(conversion);
+		conversion = prime.substring(6,8);
+		seconds = Integer.parseInt(conversion);
+		onesec = seconds + (minutes*60) + (hours*3600)
 	}
 }
