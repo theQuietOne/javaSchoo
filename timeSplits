@@ -60,10 +60,13 @@ class timeSplits
 		
 		//Check if numbers are in order
 		for (int count=2, count<6, count++)
+		
 		{
 			if (seconds[count]==0)
-			{
 				count=6;
+			else
+			{
+				
 			}
 		}
 	}
