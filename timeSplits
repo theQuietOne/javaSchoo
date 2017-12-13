@@ -3,6 +3,8 @@ class timeSplits
 	public static void main(String[]args)
 	{
 		//enter numbers
+		String errorflag = "sure";
+		int inputflag;
 		EasyReader in = new EasyReader();
 		EasyWriter out = new EasyWriter("timeSplits");
 		String [] inputs=new String [6];
@@ -11,63 +13,65 @@ class timeSplits
 		inputs[2]=in.readLine;
 		System.out.println("Once you're done, enter 00:00:00");
 		inputs[3]=in.readLine;
-		inputs[4]=in.readLine;
-		inputs[5]=in.readLine;
-		
+		if (input[3].equals("00:00:00"))
+			inputflag=2
+		else
+		{
+			inputs[4]=in.readLine;
+			if (input[4].equals("00:00:00"))
+				inputflag=3;
+			else
+			{
+				inputs[5]=in.readLine;
+				if (input[5].equals("00:00:00"))
+					inputflag=4;
+				else
+					inputflag=5;
+			}
+		}
+		System.out.println("-");
 		//convert to times
 		int hr, min, sec;
 		int [] seconds=new int [6];
 		String conversion;
-		conversion = inputs[1].substring(0,2);
-		hr = Integer.parseInt(conversion);
-		conversion = inputs[1].substring(3,5);
-		min = Integer.parseInt(conversion);
-		conversion = inputs[1].substring(6,8);
-		sec = Integer.parseInt(conversion);
-		seconds[1] = sec + (min*60) + (hr*3600)
-		
-		conversion = inputs[2].substring(0,2);
-		hr = Integer.parseInt(conversion);
-		conversion = inputs[2].substring(3,5);
-		min = Integer.parseInt(conversion);
-		conversion = inputs[2].substring(6,8);
-		sec = Integer.parseInt(conversion);
-		seconds[2] = sec + (min*60) + (hr*3600)
-		
-		conversion = inputs[3].substring(0,2);
-		hr = Integer.parseInt(conversion);
-		conversion = inputs[3].substring(3,5);
-		min = Integer.parseInt(conversion);
-		conversion = inputs[3].substring(6,8);
-		sec = Integer.parseInt(conversion);
-		seconds[3] = sec + (min*60) + (hr*3600)
-		
-		conversion = inputs[4].substring(0,2);
-		hr = Integer.parseInt(conversion);
-		conversion = inputs[4].substring(3,5);
-		min = Integer.parseInt(conversion);
-		conversion = inputs[4].substring(6,8);
-		sec = Integer.parseInt(conversion);
-		seconds[4] = sec + (min*60) + (hr*3600)		
-		
-		conversion = inputs[5].substring(0,2);
-		hr = Integer.parseInt(conversion);
-		conversion = inputs[5].substring(3,5);
-		min = Integer.parseInt(conversion);
-		conversion = inputs[5].substring(6,8);
-		sec = Integer.parseInt(conversion);
-		seconds[5] = sec + (min*60) + (hr*3600)
-		
-		//Check if numbers are in order
-		for (int count=2, count<6, count++)
-		
+		for (int count=1, count<=inputflag, count++)
 		{
-			if (seconds[count]==0)
-				count=6;
-			else
+			conversion = inputs[count].substring(0,2);
+			hr = Integer.parseInt(conversion);
+			conversion = inputs[count].substring(3,5);
+			min = Integer.parseInt(conversion);
+			conversion = inputs[count].substring(6,8);
+			sec = Integer.parseInt(conversion);
+			seconds[count] = sec + (min*60) + (hr*3600)
+		}
+		//Check if numbers are in order
+		for (int count=1, count<inputflag, count++)
+		{
+			if (!seconds[count]<seconds[count+1])
 			{
-				
+				errorflag=no;
+				count=inputflag+1;
 			}
 		}
+		//Change seconds to hours, minutes, and seconds, then print that between times
+		if (errorflag=sure)
+		{
+			for (int count=1, count<inputflag, count++)
+			{
+				int hours, minutes, secsInHours, secsInMinutes;
+				int elapsed=seconds[count+1]-seconds[count];
+				hours=elapsed/3600;
+				secsInHours=hours*3600;
+				elapsed=elapsed-secsInHours;
+				minutes=elapsed/60;
+				secsInMinutes=minutes*60;
+				elapsed=elapsed-secsInMinutes;
+				System.out.println(inputs[count]);
+				System.out.println(hours+" hours, "+minutes+" minutes, "+elapsed+" seconds");
+			}
+			System.out.println(inputs[inputflag]);
+		}
+		else
+			System.out.println("Enter the numbers in ASCENDING ORDER");
 	}
 }
