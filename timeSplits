@@ -9,21 +9,21 @@ class timeSplits
 		EasyWriter out = new EasyWriter("timeSplits");
 		String [] inputs=new String [6];
 		System.out.println("Enter up to 5 numbers in ascending order using the hh:mm:ss format; I'll find the time elapsed between them");
-		inputs[1]=in.readLine;
-		inputs[2]=in.readLine;
+		inputs[1]=in.readLine();
+		inputs[2]=in.readLine();
 		System.out.println("Once you're done, enter 00:00:00");
-		inputs[3]=in.readLine;
-		if (input[3].equals("00:00:00"))
-			inputflag=2
+		inputs[3]=in.readLine();
+		if (inputs[3].equals("00:00:00"))
+			inputflag=2;
 		else
 		{
-			inputs[4]=in.readLine;
-			if (input[4].equals("00:00:00"))
+			inputs[4]=in.readLine();
+			if (inputs[4].equals("00:00:00"))
 				inputflag=3;
 			else
 			{
-				inputs[5]=in.readLine;
-				if (input[5].equals("00:00:00"))
+				inputs[5]=in.readLine();
+				if (inputs[5].equals("00:00:00"))
 					inputflag=4;
 				else
 					inputflag=5;
@@ -34,7 +34,7 @@ class timeSplits
 		int hr, min, sec;
 		int [] seconds=new int [6];
 		String conversion;
-		for (int count=1, count<=inputflag, count++)
+		for (int count=1; count<=inputflag; count++)
 		{
 			conversion = inputs[count].substring(0,2);
 			hr = Integer.parseInt(conversion);
@@ -42,21 +42,21 @@ class timeSplits
 			min = Integer.parseInt(conversion);
 			conversion = inputs[count].substring(6,8);
 			sec = Integer.parseInt(conversion);
-			seconds[count] = sec + (min*60) + (hr*3600)
+			seconds[count] = sec + (min*60) + (hr*3600);
 		}
 		//Check if numbers are in order
-		for (int count=1, count<inputflag, count++)
+		for (int count=1; count<inputflag; count++)
 		{
-			if (!seconds[count]<seconds[count+1])
+			if (seconds[count]>=seconds[count+1])
 			{
-				errorflag=no;
+				errorflag="no";
 				count=inputflag+1;
 			}
 		}
 		//Change seconds to hours, minutes, and seconds, then print that between times
-		if (errorflag=sure)
+		if (errorflag.equals("sure"))
 		{
-			for (int count=1, count<inputflag, count++)
+			for (int count=1; count<inputflag; count++)
 			{
 				int hours, minutes, secsInHours, secsInMinutes;
 				int elapsed=seconds[count+1]-seconds[count];
