@@ -6,7 +6,7 @@ class timeSplits
 		String errorflag = "sure";
 		int inputflag;
 		EasyReader in = new EasyReader();
-		EasyWriter out = new EasyWriter("timeSplits");
+		EasyWriter out = new EasyWriter("timeSplits.txt");
 		String [] inputs=new String [6];
 		System.out.println("Enter up to 5 numbers in ascending order using the hh:mm:ss format; I'll find the time elapsed between them");
 		inputs[1]=in.readLine();
@@ -67,9 +67,13 @@ class timeSplits
 				secsInMinutes=minutes*60;
 				elapsed=elapsed-secsInMinutes;
 				System.out.println(inputs[count]);
+				out.println(inputs[count]);
 				System.out.println(hours+" hours, "+minutes+" minutes, "+elapsed+" seconds");
+				out.println(hours+" hours, "+minutes+" minutes, "+elapsed+" seconds");
 			}
 			System.out.println(inputs[inputflag]);
+			out.println(inputs[inputflag]);
+			out.close();
 		}
 		else
 			System.out.println("Enter the numbers in ASCENDING ORDER");
