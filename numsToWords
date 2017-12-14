@@ -1,0 +1,29 @@
+class numsToWords
+{
+	public static void main (String[]args)
+	{
+		int length;
+		String number;
+		EasyReader in=new EasyReader();
+		System.out.println("Enter a number between 1 and 999999 to convert to words!");
+		length=in.readLine();
+		//switch statement to get # of digits up to 6
+		switch(length)
+		{
+			case 1:
+				number="0"+number;	
+			case 2:
+				number="0"+number;	
+			case 3:
+				number="0"+number;	
+			case 4:
+				number="0"+number;	
+			case 5:
+				number="0"+number;	
+			case 6:
+				break;
+			default:
+				System.out.println("Make sure your number is between 1 and 999999");
+		}
+	}
+}
