@@ -2,28 +2,319 @@ class numsToWords
 {
 	public static void main (String[]args)
 	{
-		int length;
-		String number;
+		String number, character, checkflag;
 		EasyReader in=new EasyReader();
 		System.out.println("Enter a number between 1 and 999999 to convert to words!");
-		length=in.readLine();
-		//switch statement to get # of digits up to 6
-		switch(length)
+		number=in.readLine();
+		//use switch to convert to words
+		switch(number.length())
 		{
-			case 1:
-				number="0"+number;	
-			case 2:
-				number="0"+number;	
-			case 3:
-				number="0"+number;	
-			case 4:
-				number="0"+number;	
-			case 5:
-				number="0"+number;	
 			case 6:
-				break;
+				switch(number.substring(0,1))
+				{
+					case "0":
+						break;
+					case "1":
+						System.out.print("one hundred ");
+						break;
+					case "2":
+						System.out.print("two hundred ");
+						break;
+					case "3":
+						System.out.print("three hundred ");
+						break;
+					case "4":
+						System.out.print("four hundred ");
+						break;
+					case "5":
+						System.out.print("five hundred ");
+						break;
+					case "6":
+						System.out.print("six hundred ");
+						break;
+					case "7":
+						System.out.print("seven hundred ");
+						break;
+					case "8":
+						System.out.print("eight hundred ");
+						break;
+					case "9":
+						System.out.print("nine hundred ");
+					default:
+						System.out.println("Not a number");
+						break;
+				}
+			case 5:
+				switch(number.substring(1,2))
+				{
+					case "0":
+						break;
+					case "1":
+						checkflag="teen";
+						break;
+					case "2":
+						System.out.print("twenty ");
+						break;
+					case "3":
+						System.out.print("thirty ");
+						break;
+					case "4":
+						System.out.print("forty ");
+						break;
+					case "5":
+						System.out.print("fifty ");
+						break;
+					case "6":
+						System.out.print("sixty ");
+						break;
+					case "7":
+						System.out.print("seventy ");
+						break;
+					case "8":
+						System.out.print("eighty ");
+						break;
+					case "9":
+						System.out.print("ninety ");
+						break;
+					default:
+						System.out.println("Not a number");
+						break;
+				}
+			case 4:
+				if (checkflag="teen")
+				{
+					checkflag="no";
+					switch(number.substring(2,3))
+					{
+						case "0":
+							System.out.print("ten thousand ");
+							break;
+						case "1":
+							System.out.print("eleven thousand ");
+							break;
+						case "2":
+							System.out.print("twelve thousand ");
+							break;
+						case "3":
+							System.out.print("thirteen thousand "); 
+							break;
+						case "4":
+							System.out.print("fourteen thousand ");
+							break;
+						case "5":
+							System.out.print("fifteen thousand ");
+							break;
+						case "6":
+							System.out.print("sixteen thousand ");
+							break;
+						case "7":
+							System.out.print("seventeen thousand ");
+							break;
+						case "8":
+							System.out.print("eighteen thousand ");
+							break;
+						case "9":
+							System.out.print("nineteen thousand ");
+							break;
+						default:
+							System.out.println("Not a number");
+							break;
+						}
+					}
+				else
+				{
+					switch(number.substring(2,3))
+					{
+						case "0":
+							System.out.print("thousand ");
+							break;
+						case "1":
+							System.out.print("one thousand ");
+							break;
+						case "2":
+							System.out.print("two thousand ");
+							break;
+						case "3":
+							System.out.print("three thousand ");
+							break;
+						case "4":
+							System.out.print("four thousand ");
+							break;
+						case "5":
+							System.out.print("five thousand ");
+							break;
+						case "6":
+							System.out.print("six thousand ");
+							break;
+						case "7":
+							System.out.print("seven thousand ");
+							break;
+						case "8":
+							System.out.print("eight thousand ");
+							break;
+						case "9":
+							System.out.print("nine thousand ");
+							break;
+						default:
+							System.out.println("Not a number");
+							break;
+					}
+				}
+			case 3:
+				switch(number.substring(3,4))
+				{
+					case 0:
+						break;
+					case 1:
+						System.out.print("one hundred ");
+						break;
+					case 2:
+						System.out.print("two hundred ");
+						break;
+					case 3:
+						System.out.print("three hundred ");
+						break;
+					case 4:
+						System.out.print("four hundred ");
+						break;
+					case 5:
+						System.out.print("five hundred ");
+						break;
+					case 6:
+						System.out.print("six hundred ");
+						break;
+					case 7:
+						System.out.print("seven hundred ");
+						break;
+					case 8:
+						System.out.print("eight hundred ");
+						break;
+					case 9:
+						System.out.print("nine hundred ");
+						break;
+					default:
+						System.out.print("Not a number");
+						break;
+				}
+			case 2:
+				switch(number.substring(1,2))
+				{
+					case "0":
+						break;
+					case "1":
+						checkflag="teen";
+						break;
+					case "2":
+						System.out.print("twenty ");
+						break;
+					case "3":
+						System.out.print("thirty ");
+						break;
+					case "4":
+						System.out.print("forty ");
+						break;
+					case "5":
+						System.out.print("fifty ");
+						break;
+					case "6":
+						System.out.print("sixty ");
+						break;
+					case "7":
+						System.out.print("seventy ");
+						break;
+					case "8":
+						System.out.print("eighty ");
+						break;
+					case "9":
+						System.out.print("ninety ");
+						break;
+					default:
+						System.out.println("Not a number");
+						break;
+				}
+			case 1:
+				if (checkflag="teen")
+				{
+					checkflag="no";
+					switch(number.substring(2,3))
+					{
+						case "0":
+							System.out.print("ten ");
+							break;
+						case "1":
+							System.out.print("eleven ");
+							break;
+						case "2":
+							System.out.print("twelve ");
+							break;
+						case "3":
+							System.out.print("thirteen "); 
+							break;
+						case "4":
+							System.out.print("fourteen ");
+							break;
+						case "5":
+							System.out.print("fifteen ");
+							break;
+						case "6":
+							System.out.print("sixteen ");
+							break;
+						case "7":
+							System.out.print("seventeen ");
+							break;
+						case "8":
+							System.out.print("eighteen ");
+							break;
+						case "9":
+							System.out.print("nineteen ");
+							break;
+						default:
+							System.out.println("Not a number");
+							break;
+						}
+					}
+				else
+				{
+					switch(number.substring(2,3))
+					{
+						case "0":
+							break;
+						case "1":
+							System.out.print("one ");
+							break;
+						case "2":
+							System.out.print("two ");
+							break;
+						case "3":
+							System.out.print("three ");
+							break;
+						case "4":
+							System.out.print("four ");
+							break;
+						case "5":
+							System.out.print("five ");
+							break;
+						case "6":
+							System.out.print("six ");
+							break;
+						case "7":
+							System.out.print("seven ");
+							break;
+						case "8":
+							System.out.print("eight ");
+							break;
+						case "9":
+							System.out.print("nine ");
+							break;
+						default:
+							System.out.println("Not a number");
+							break;
+					}
+				}
 			default:
 				System.out.println("Make sure your number is between 1 and 999999");
 		}
+		System.out.println("");
+		
 	}
 }
