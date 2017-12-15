@@ -3,6 +3,7 @@ class numsToWords
 	public static void main (String[]args)
 	{
 		String number, character, checkflag;
+		checkflag="notteen";
 		EasyReader in=new EasyReader();
 		System.out.println("Enter a number between 1 and 999999 to convert to words!");
 		number=in.readLine();
@@ -81,7 +82,7 @@ class numsToWords
 						break;
 				}
 			case 4:
-				if (checkflag="teen")
+				if (checkflag.equals("teen"))
 				{
 					checkflag="no";
 					switch(number.substring(2,3))
@@ -96,7 +97,7 @@ class numsToWords
 							System.out.print("twelve thousand ");
 							break;
 						case "3":
-							System.out.print("thirteen thousand "); 
+							System.out.print("thirteen thousand ");
 							break;
 						case "4":
 							System.out.print("fourteen thousand ");
@@ -163,33 +164,33 @@ class numsToWords
 			case 3:
 				switch(number.substring(3,4))
 				{
-					case 0:
+					case "0":
 						break;
-					case 1:
+					case "1":
 						System.out.print("one hundred ");
 						break;
-					case 2:
+					case "2":
 						System.out.print("two hundred ");
 						break;
-					case 3:
+					case "3":
 						System.out.print("three hundred ");
 						break;
-					case 4:
+					case "4":
 						System.out.print("four hundred ");
 						break;
-					case 5:
+					case "5":
 						System.out.print("five hundred ");
 						break;
-					case 6:
+					case "6":
 						System.out.print("six hundred ");
 						break;
-					case 7:
+					case "7":
 						System.out.print("seven hundred ");
 						break;
-					case 8:
+					case "8":
 						System.out.print("eight hundred ");
 						break;
-					case 9:
+					case "9":
 						System.out.print("nine hundred ");
 						break;
 					default:
@@ -197,7 +198,7 @@ class numsToWords
 						break;
 				}
 			case 2:
-				switch(number.substring(1,2))
+				switch(number.substring(4,5))
 				{
 					case "0":
 						break;
@@ -233,10 +234,10 @@ class numsToWords
 						break;
 				}
 			case 1:
-				if (checkflag="teen")
+				if (checkflag.equals("teen"))
 				{
 					checkflag="no";
-					switch(number.substring(2,3))
+					switch(number.substring(4,5))
 					{
 						case "0":
 							System.out.print("ten ");
@@ -248,7 +249,7 @@ class numsToWords
 							System.out.print("twelve ");
 							break;
 						case "3":
-							System.out.print("thirteen "); 
+							System.out.print("thirteen ");
 							break;
 						case "4":
 							System.out.print("fourteen ");
@@ -275,7 +276,7 @@ class numsToWords
 					}
 				else
 				{
-					switch(number.substring(2,3))
+					switch(number.substring(5,3))
 					{
 						case "0":
 							break;
@@ -315,6 +316,6 @@ class numsToWords
 				System.out.println("Make sure your number is between 1 and 999999");
 		}
 		System.out.println("");
-		
+
 	}
 }
