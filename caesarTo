@@ -1,0 +1,41 @@
+class caesarTo
+{
+	public static void main (String[]args)
+	{
+		EasyReader in=new EasyReader();
+		EasyWriter out=new EasyWriter("caesarTo.txt");
+		String phrase, encrypto;
+		int key;
+		encrypto="";
+		System.out.println("Enter a phrase and an encryption key");
+		phrase=in.readLine();
+		key=in.readInt();
+		//convert to ascii table value
+		for (int counter=0; counter<phrase.length; counter++)
+		{
+			charmelon=phrase.substring(counter, counter+1);
+			int ascii=(int) charmelon;
+			//convert using key, then add to new string
+			if (ascii>=65&&ascii<=90)
+			{
+				ascii=ascii+key;
+				if(ascii>90)
+					ascii=ascii-26;
+			}
+			else if (ascii>=97&&ascii<=122)
+			{
+				ascii=ascii+key;
+				if(ascii>122)
+				{
+					ascii=ascii-26;
+				}
+
+			}
+			char charcoal=(char) ascii;
+			encrypto=encrypto+charcoal;
+		}
+		System.out.println("When encrypted, your phrase is "+encrypto);
+		out.println(encrypto);
+		out.close();
+	}
+}
