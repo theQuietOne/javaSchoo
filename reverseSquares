@@ -1,0 +1,35 @@
+class reverseSquares
+{
+	public static void main(String[]args)
+	{
+		
+		String [] forsquare=new String[10001];
+		String [] reversquare=new String[10001];
+		//generate numbers, convert them to strings in order to compare them
+		for(int count=1; count<10001; count++)
+		{
+			int parsely=count*count;
+			String parseDly=Integer.toString(parsely);
+			forsquare[count]=parseDly;
+		}
+		//reverse numbers, then input them into reversquare
+		for (int count=1; count<10001; count++)
+		{
+			reversquare[count]="";
+			for(int dracula=forsquare.length(); dracula>0; dracula--)
+			{
+				int reverser=forsquare[count].substring(dracula-1,dracula);
+				reversquare[count]=reversquare[count]+reverser;
+			}
+		}
+		//check through both to see if any numbers correspond
+		for (int count=1; count<10001; count++)
+		{
+			for (int dracula=1; dracula<10001; count++)
+			{
+				if (forsquare[count].equals(reversquare[dracula]))
+					System.out.println(count+" "+dracula+" are reverse squares of each other")
+			}
+		}
+	}
+}
