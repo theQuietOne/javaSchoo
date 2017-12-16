@@ -11,9 +11,9 @@ class caesarTo
 		phrase=in.readLine();
 		key=in.readInt();
 		//convert to ascii table value
-		for (int counter=0; counter<phrase.length; counter++)
+		for (int counter=0; counter<phrase.length(); counter++)
 		{
-			charmelon=phrase.substring(counter, counter+1);
+			int charmelon=phrase.charAt(counter);
 			int ascii=(int) charmelon;
 			//convert using key, then add to new string
 			if (ascii>=65&&ascii<=90)
