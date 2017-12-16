@@ -1,0 +1,53 @@
+class caesarFrom
+{
+	public static void main(String[]args)
+	{
+		EasyReader in=new EasyReader();
+		EasyReader file=new EasyReader(caesarTo.txt);
+		String encrypto="";
+		String phrase="";
+		int key;
+		System.out.println("Do you want to find the decrypted version from save or do you want to enter a phrase?");
+		//pick method of input+read it
+		while (encrypto="")
+		{
+			System.out.println("Enter TYPE or FILE");
+			String nah=in.readLine;
+			if (nah.equals("TYPE"))
+				encrypto=in.readLine();
+			else if (nah.equals("FILE"))
+			{
+				while (!file.eof())
+					encrypto=file.readLine();
+				System.out.println("Your encrypted code is"+encrypto);
+			}
+		}
+		//find key
+		System.out.println("Enter the key used to encrypt the phrase");
+		key=in.readInt();
+		//decrypt encrypted phrase
+		for (int counter=0; counter<encrypto.length(); counter++)
+		{
+			int charmelon=encrypto.charAt(counter);
+			int ascii=(int) charmelon;
+			//convert using key, then add to new string
+			if (ascii>=65&&ascii<=90)
+			{
+				ascii=ascii-key;
+				if(ascii<65)
+					ascii=ascii+26;
+			}
+			else if (ascii>=97&&ascii<=122)
+			{
+				ascii=ascii-key;
+				if(ascii>122)
+				{
+					ascii=ascii+26;
+				}
+
+			}
+			char charcoal=(char) ascii;
+			phrase=phrase+charcoal;
+		}
+	}
+}
