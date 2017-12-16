@@ -17,35 +17,36 @@ class coinFlip
 			//flip coin
 			coin=rando.nextInt(2);
 			//count how many of each flip there was
-			if (coin=0)
+			if (coin==0)
 				headflag++;
-			else if(coin=1)
+			else if(coin==1)
 				tailflag++;
 			//keep track of longest run of heads or tails
-			now=cointer;
+			now=coin;
 			if (before!=now)
 				posflag=0;
 			if (now==0)
 				headarray[posflag]=1;
 			else if (now==1)
 				tailarray[posflag]=1;
+			posflag++;
 			before=now;
 		}
 		int potato=1;
 		hcount=0;
 		tcount=0;
-		while (int potato=1)
+		while (potato==1)
 		{
 			potato=headarray[hcount];
 			hcount++;
 		}
 		potato=1;
-		while (int potato=1)
+		while (potato==1)
 		{
 			potato=tailarray[tcount];
 			tcount++;
 		}
-		System.out.println("There were "+headflag+" heads and "+tailflag+"tails flipped");
+		System.out.println("There were "+headflag+" heads and "+tailflag+" tails flipped");
 		System.out.println("The longest run of heads was "+hcount);
 		System.out.println("The longest run of tails was "+tcount);
 	}
