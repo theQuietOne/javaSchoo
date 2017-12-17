@@ -3,23 +3,27 @@ class caesarFrom
 	public static void main(String[]args)
 	{
 		EasyReader in=new EasyReader();
-		EasyReader file=new EasyReader(caesarTo.txt);
+		EasyReader file=new EasyReader("caesarTo.txt");
 		String encrypto="";
 		String phrase="";
-		int key;
+		int key, flag;
+		flag=1;
 		System.out.println("Do you want to find the decrypted version from save or do you want to enter a phrase?");
 		//pick method of input+read it
-		while (encrypto="")
+		while (flag==1)
 		{
 			System.out.println("Enter TYPE or FILE");
-			String nah=in.readLine;
+			String nah=in.readLine();
 			if (nah.equals("TYPE"))
+			{
 				encrypto=in.readLine();
+				flag++;
+			}
 			else if (nah.equals("FILE"))
 			{
-				while (!file.eof())
-					encrypto=file.readLine();
-				System.out.println("Your encrypted code is"+encrypto);
+				encrypto=file.readLine();
+				System.out.println("Your encrypted code is "+encrypto);
+				flag++;
 			}
 		}
 		//find key
@@ -49,5 +53,6 @@ class caesarFrom
 			char charcoal=(char) ascii;
 			phrase=phrase+charcoal;
 		}
+		System.out.println(phrase);
 	}
 }
