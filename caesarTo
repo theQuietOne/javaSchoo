@@ -7,8 +7,9 @@ class caesarTo
 		String phrase, encrypto;
 		int key;
 		encrypto="";
-		System.out.println("Enter a phrase and an encryption key");
+		System.out.println("Enter a phrase");
 		phrase=in.readLine();
+		System.out.println("Enter a key");
 		key=in.readInt();
 		//convert to ascii table value
 		for (int counter=0; counter<phrase.length(); counter++)
